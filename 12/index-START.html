@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Detection</title>
+  <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+</head>
+<body>
+<script>
+  const secretCode = 'leeboy'
+  const pressKey = []
+
+  window.addEventListener('keyup', (e) => {
+    // 輸入的key同當前的密碼index，則push入密碼(長度+1,index+1)，否則長度0
+    secretCode[pressKey.length] === e.key ? pressKey.push(e.key) : pressKey.length = 0
+    console.log(pressKey)
+    if (pressKey.join('') === secretCode) {
+      cornify_add()
+      pressKey.length = 0
+    }
+  })
+</script>
+</body>
+</html>
