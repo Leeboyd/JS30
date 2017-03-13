@@ -118,7 +118,7 @@
 
 + 更詳細說明參考我的 Medium 👉 [JS基礎：Primitive type v.s Object types](https://medium.com/@jobboy0101/js%E5%9F%BA%E7%A4%8E-primitive-type-v-s-object-types-f88f7c16f225#.cqguxnzci)
 
-**Exercise 16: localStorage**
+**Exercise 15: localStorage**
 
 > Complete Date: Mar 13, 2017
 
@@ -127,6 +127,10 @@
 
 * `this` :  `event.currentTarget`, 指的是 `listener` 監聽的 DOM 元素，也就是 invoke `listener` 的 context
 * `e.target` : 指的是實際被 `click` 的 DOM 元素
+
+更新：改成 `**IIFE**` 除此之外也研究 
+* `onload` ，指的是DOM, CSS, script, img 加載完成
+* `DOMContentLoaded` 僅有 DOM 加載完成
 
 # 參考資料
 
