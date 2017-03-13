@@ -114,9 +114,19 @@
 
 > Complete Date: Mar 10, 2017
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/4W9ccEGKpyBJXN" width="425" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/boylee18/js-basic-by-value-versus-by-reference" title="JS Basic: By value versus By reference" target="_blank">JS Basic: By value versus By reference</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/boylee18">Boy Lee</a></strong> </div>
++ 參考 [我做的 SlideShare ](https://www.slideshare.net/boylee18/js-basic-by-value-versus-by-reference)
 
 + 更詳細說明參考我的 Medium 👉 [JS基礎：Primitive type v.s Object types](https://medium.com/@jobboy0101/js%E5%9F%BA%E7%A4%8E-primitive-type-v-s-object-types-f88f7c16f225#.cqguxnzci)
+
+**Exercise 16: localStorage**
+
+> Complete Date: Mar 13, 2017
+
+有關 localStorage ，我會在開發初期尚未建置 ＡＰＩ 時，當作本地資料庫使用，也方便觀察頁面 render 結果。
+這堂課中也可以觀察 `e.target` 與 `this` 的差異，
+
+* `this` :  `event.currentTarget`, 指的是 `listener` 監聽的 DOM 元素，也就是 invoke `listener` 的 context
+* `e.target` : 指的是實際被 `click` 的 DOM 元素
 
 # 參考資料
 
