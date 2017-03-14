@@ -41,7 +41,5 @@
 
   addItems.addEventListener('submit', addItem)
   itemsList.addEventListener('click', toggleCheck)
-  console.time('有');
   document.onload = renderList(items, itemsList)
-  console.timeEnd('有');
 })()
