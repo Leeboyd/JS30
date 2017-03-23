@@ -154,8 +154,9 @@
 
 * The `MediaDevices` 透果 `getUserMedia` 存取終端的硬體設備
 
+**Exercise 20: SpeechRecognition**
 
-> [MDN Web APIs](https://developer.mozilla.org/en-US/docs/Web/API)
+* `window.SpeechRecognition` is a Web Speech API.
 
 # 參考資料
 <p align="center">
@@ -166,3 +167,4 @@
 </p>
 
 1. [Javascript 30](https://javascript30.com/)
+2. [MDN Web APIs](https://developer.mozilla.org/en-US/docs/Web/API)
