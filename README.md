@@ -138,6 +138,24 @@
 
 * Using ES6 object deconstruction
 
+**Exercise 17: Sorting ignoring articles ('the“, ”a', “an” etc)**
+
+* 使用 `Regular Expression object` 來重新格式化資料
+
+**Exercise 18: Adding Up Times**
+
+* 使用 `map` `reduce` 將各個小影片時間加總，轉換格式  
+
+**Exercise 19: Webcam**
+
+* Web APIs `Navigator` `MediaDevices`
+
+* The `Navigator` 顯示當前執行程式的環境，通常是瀏覽器
+
+* The `MediaDevices` 透果 `getUserMedia` 存取終端的硬體設備
+
+
+> [MDN Web APIs](https://developer.mozilla.org/en-US/docs/Web/API)
 
 # 參考資料
 <p align="center">
