@@ -158,6 +158,10 @@
 
 * `window.SpeechRecognition` is a Web Speech API.
 
+**Exercise 21: A GEO Location App**
+
+* The `navigator.geolocation.watchPosition()` method is used to register a handler function that will be called automatically each time the position of the device changes.
+
 # 參考資料
 <p align="center">
   <br>

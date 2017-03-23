@@ -4,7 +4,7 @@
   "description": "Get started writing JS30",
   "main": "",
   "scripts": {
-    "start" : "browser-sync start --server --files '*.css, *.html, *.js'"
+    "start": "browser-sync start --directory --server --files '*.css, *.html, *.js' --https"
   },
   "keywords": [
     "es6",
