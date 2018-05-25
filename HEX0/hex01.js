@@ -15,16 +15,12 @@ const api = {
   }
 }
 
-// return Promise
-// fetch(url)
-  // .then(blob => blob.json())
-  // .then(data => locations.push(...data))
-  // .catch((err) => (console.log(err)))
-
 const counter = document.querySelector('.boy-counter a');
 const email = document.querySelector('input[type=email]');
 const form = document.querySelector('.boy-form');
 const list = document.querySelector('.boy-resultlist');
+const button = document.querySelector('button');
+
 let searchResult = [];
 
 api.get_signUpTotal()
@@ -34,8 +30,13 @@ api.get_signUpTotal()
 
 function rederResult (result) {
   searchResult.push(result)
-  list.innerHTML = searchResult.join('');
+  list.innerHTML = searchResult.reverse().join('');
   email.value = '';
+}
+
+function toggleLoading (toggle) {
+  button.disabled = toggle
+  button.innerHTML = toggle ? `LOADING...<span class="boy-loading"></span>` : `check`;
 }
 
 function submitForm (e) {
@@ -44,17 +45,21 @@ function submitForm (e) {
     var data = {
       "email": email.value
     }
+    toggleLoading(true);
+
     api.post_isSignUp(data)
     .then(blob => blob.json())
     .then((data) => {
       if (data.success) {
         rederResult(`<li>${data.nickName} (${email.value}) @ ${data.timeStamp} <span class="successMsg">報名成功！</span></li>`)
+        toggleLoading(false);
       } else {
         throw new Error(data.message)
       }
     })
     .catch((err) => {
-      rederResult(`<li>(${email.value}) <span class="errorMsg">${err.message}</span></li>`)
+      rederResult(`<li>(${email.value}) <span class="errorMsg">${err.message}</span></li>`);
+      toggleLoading(false);
     })
   } else {
 

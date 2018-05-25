@@ -17,16 +17,12 @@ var api = {
   }
 };
 
-// return Promise
-// fetch(url)
-// .then(blob => blob.json())
-// .then(data => locations.push(...data))
-// .catch((err) => (console.log(err)))
-
 var counter = document.querySelector('.boy-counter a');
 var email = document.querySelector('input[type=email]');
 var form = document.querySelector('.boy-form');
 var list = document.querySelector('.boy-resultlist');
+var button = document.querySelector('button');
+
 var searchResult = [];
 
 api.get_signUpTotal().then(function (blob) {
@@ -39,8 +35,13 @@ api.get_signUpTotal().then(function (blob) {
 
 function rederResult(result) {
   searchResult.push(result);
-  list.innerHTML = searchResult.join('');
+  list.innerHTML = searchResult.reverse().join('');
   email.value = '';
+}
+
+function toggleLoading(toggle) {
+  button.disabled = toggle;
+  button.innerHTML = toggle ? 'LOADING...<span class="boy-loading"></span>' : 'check';
 }
 
 function submitForm(e) {
@@ -49,16 +50,20 @@ function submitForm(e) {
     var data = {
       "email": email.value
     };
+    toggleLoading(true);
+
     api.post_isSignUp(data).then(function (blob) {
       return blob.json();
     }).then(function (data) {
       if (data.success) {
         rederResult('<li>' + data.nickName + ' (' + email.value + ') @ ' + data.timeStamp + ' <span class="successMsg">\u5831\u540D\u6210\u529F\uFF01</span></li>');
+        toggleLoading(false);
       } else {
         throw new Error(data.message);
       }
     }).catch(function (err) {
       rederResult('<li>(' + email.value + ') <span class="errorMsg">' + err.message + '</span></li>');
+      toggleLoading(false);
     });
   } else {}
 }
