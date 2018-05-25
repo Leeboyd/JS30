@@ -23,9 +23,11 @@ var api = {
 // .then(data => locations.push(...data))
 // .catch((err) => (console.log(err)))
 
-var counter = document.querySelector('.message a');
+var counter = document.querySelector('.boy-counter a');
 var email = document.querySelector('input[type=email]');
 var form = document.querySelector('.boy-form');
+var list = document.querySelector('.boy-resultlist');
+var searchResult = [];
 
 api.get_signUpTotal().then(function (blob) {
   return blob.json();
@@ -34,6 +36,12 @@ api.get_signUpTotal().then(function (blob) {
 }).catch(function (err) {
   return console.log(err);
 });
+
+function rederResult(result) {
+  searchResult.push(result);
+  list.innerHTML = searchResult.join('');
+  email.value = '';
+}
 
 function submitForm(e) {
   e.preventDefault();
@@ -44,7 +52,13 @@ function submitForm(e) {
     api.post_isSignUp(data).then(function (blob) {
       return blob.json();
     }).then(function (data) {
-      console.log(data);
+      if (data.success) {
+        rederResult('<li>' + data.nickName + ' (' + email.value + ') @ ' + data.timeStamp + ' <span class="successMsg">\u5831\u540D\u6210\u529F\uFF01</span></li>');
+      } else {
+        throw new Error(data.message);
+      }
+    }).catch(function (err) {
+      rederResult('<li>(' + email.value + ') <span class="errorMsg">' + err.message + '</span></li>');
     });
   } else {}
 }

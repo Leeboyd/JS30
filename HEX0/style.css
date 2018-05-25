@@ -4,6 +4,14 @@ h1 {
   text-align:center;
   font-family: 'Press Start 2P', cursive;  
 }
+
+.successMsg {
+  color: #008000;
+}
+.errorMsg {
+  color: #800000;
+}
+
 .boy-centerbox {
   width: 360px;
   padding: 8% 0 0;
@@ -11,9 +19,9 @@ h1 {
 }
 .boy-form {
   position: relative;
-  background: #FFFFFF;
+  background: white;
   max-width: 360px;
-  margin: 0 auto 100px;
+  margin: 0 auto;
   padding: 45px;
   text-align: center;
 }
@@ -44,16 +52,40 @@ h1 {
 .boy-form button:hover,.boy-form button:active,.boy-form button:focus {
   color: rgba(106,246,251,1);
 }
-.boy-form .message {
+.boy-form .boy-counter {
   margin: 15px 0 0;
   color: rgba(14,16,78,1);
   font-size: 12px;
 }
-.boy-form .message a {
+.boy-form .boy-counter a {
   font-family: 'Press Start 2P', cursive;  
   color: rgba(106,246,251,1);
   text-decoration: none;
   background-color: rgba(14,16,78,1);
+}
+
+.boy-resultlist {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.boy-resultlist li {
+  display: flex;
+  justify-content: space-between;
+  margin:0 20%;
+  padding:20px;
+  border-bottom: 1px solid #D8D8D8;
+  background:white;
+  list-style: none;
+}
+
+.boy-resultlist li:nth-child(even) {
+  transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+  background: linear-gradient(to bottom,  #ffffff 0%,#EFEFEF 100%);
+}
+.boy-resultlist li:nth-child(odd) {
+  transform: perspective(100px) rotateX(-3deg) translateY(3px);
+  background: linear-gradient(to top,  #ffffff 0%,#EFEFEF 100%);
 }
 
 body {

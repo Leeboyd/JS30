@@ -21,14 +21,22 @@ const api = {
   // .then(data => locations.push(...data))
   // .catch((err) => (console.log(err)))
 
-const counter = document.querySelector('.message a');
+const counter = document.querySelector('.boy-counter a');
 const email = document.querySelector('input[type=email]');
 const form = document.querySelector('.boy-form');
+const list = document.querySelector('.boy-resultlist');
+let searchResult = [];
 
 api.get_signUpTotal()
   .then(blob => blob.json())
   .then(data => counter.innerHTML = data.total)
   .catch((err) => (console.log(err)))
+
+function rederResult (result) {
+  searchResult.push(result)
+  list.innerHTML = searchResult.join('');
+  email.value = '';
+}
 
 function submitForm (e) {
   e.preventDefault()
@@ -38,9 +46,16 @@ function submitForm (e) {
     }
     api.post_isSignUp(data)
     .then(blob => blob.json())
-    .then(function(data){ 
-      console.log(data)
-    });
+    .then((data) => {
+      if (data.success) {
+        rederResult(`<li>${data.nickName} (${email.value}) @ ${data.timeStamp} <span class="successMsg">報名成功！</span></li>`)
+      } else {
+        throw new Error(data.message)
+      }
+    })
+    .catch((err) => {
+      rederResult(`<li>(${email.value}) <span class="errorMsg">${err.message}</span></li>`)
+    })
   } else {
 
   }
