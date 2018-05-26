@@ -56,7 +56,9 @@ function submitForm(e) {
       return blob.json();
     }).then(function (data) {
       if (data.success) {
-        rederResult('<li>' + data.nickName + ' (' + email.value + ') @ ' + data.timeStamp + ' <span class="successMsg">\u5831\u540D\u6210\u529F\uFF01</span></li>');
+        var time = parseDate(data.timeStamp);
+        console.log(time);
+        rederResult('<li>' + data.nickName + ' (' + email.value + ') @ ' + time + ' <span class="successMsg">\u5831\u540D\u6210\u529F\uFF01</span></li>');
         toggleLoading(false);
       } else {
         throw new Error(data.message);
@@ -66,6 +68,16 @@ function submitForm(e) {
       toggleLoading(false);
     });
   } else {}
+}
+
+function parseDate(timeStamp) {
+  var dateObject = new Date(timeStamp);
+  var year = dateObject.getFullYear(),
+      month = dateObject.getMonth() + 1,
+      day = dateObject.getDate(),
+      hour = dateObject.getHours(),
+      min = dateObject.getMinutes();
+  return year + '-' + month + '-' + day + ' ' + hour + ':' + min;
 }
 
 form.addEventListener('submit', submitForm);

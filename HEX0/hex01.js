@@ -51,7 +51,9 @@ function submitForm (e) {
     .then(blob => blob.json())
     .then((data) => {
       if (data.success) {
-        rederResult(`<li>${data.nickName} (${email.value}) @ ${data.timeStamp} <span class="successMsg">報名成功！</span></li>`)
+        let time = parseDate(data.timeStamp)
+        console.log(time)
+        rederResult(`<li>${data.nickName} (${email.value}) @ ${time} <span class="successMsg">報名成功！</span></li>`)
         toggleLoading(false);
       } else {
         throw new Error(data.message)
@@ -64,6 +66,16 @@ function submitForm (e) {
   } else {
 
   }
+}
+
+function parseDate (timeStamp) {
+  let dateObject = new Date(timeStamp);
+  let year = dateObject.getFullYear(),
+    month = dateObject.getMonth() + 1,
+    day = dateObject.getDate(),
+    hour = dateObject.getHours(),
+    min = dateObject.getMinutes();
+  return `${year}-${month}-${day} ${hour}:${min}`;
 }
 
 form.addEventListener('submit', submitForm);
