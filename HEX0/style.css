@@ -3,7 +3,7 @@
   height: 100%;
 }
 * {
-  outline: 1px solid crimson;
+  /* outline: 1px solid crimson; */
 }
 h1 {
   color:white;
@@ -95,13 +95,13 @@ h1 {
 }
 
 #boy-clock {
-  /* font-family: sans-serif; */
+  font-family: 'Press Start 2P', sans-serif;
   position: fixed;
   display: inline-block;
   text-align: center;
   padding: 10px;
   border-radius: 3px;
-  font-size: 2em;
+  font-size: 1em;
   background: rgba(14,16,78,0.5);
   color: rgba(106,246,251,1);
 }
