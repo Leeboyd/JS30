@@ -1,3 +1,4 @@
+import renderCoundown from './timer';
 const BASE_URL = `https://www.thef2e.com/api/`;
 const api = {
   get_signUpTotal () {
@@ -23,6 +24,9 @@ const button = document.querySelector('button');
 
 let searchResult = [];
 
+//
+renderCoundown();
+//
 api.get_signUpTotal()
   .then(blob => blob.json())
   .then(data => counter.innerHTML = data.total)
