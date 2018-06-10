@@ -1,12 +1,9 @@
+@import './_variables.scss';
+@import './_checkbox.scss';
 * {
   box-sizing: border-box;
-  // color:                    hsla(210, 100%, 100%, 0.9) !important;
-  // background:               hsla(210, 100%,  50%, 0.5) !important;
   // outline:    solid 0.25rem rgba(236, 52, 52, 0.5) !important;
 }
-
-$primary: #4A90E2;
-$darken-primary: #00408B;
 
 body {
   background-color: #E1E1E1;
@@ -15,12 +12,6 @@ body {
 .container {
   width: 100%;
   margin: 0 auto; 
-}
-
-// 
-
-.bg-primary {
-  background-color: $primary;
 }
 
 // 
@@ -35,7 +26,7 @@ body {
   .todo-nav-items {
     display: flex;
     justify-content: space-between;
-    max-width: 650px;
+    max-width: $main-layout-width;
     span {
       flex: 1;
       padding: 25px 0;
@@ -53,16 +44,137 @@ body {
   }
 }
 
-// $darken-primary: #00408B;
-// $lighten-warning: #FFF2DC;
-// $gray-500: #C8C8C8;
+.todo-form {
+  margin: 20px auto 0;
+  box-shadow: 0px 4px 4px $gray-200;
+  max-width: $main-layout-width;
+  .todo-input-dummy {
+    position: relative;
+    padding: 15px 20px 15px 70px;
+    border: 2px solid $gray-200;
+    font-size: 1.5rem;
+    background-color: white;
+    color: $gray-200;
+    cursor: text;
+    i {
+      position: absolute;
+      left: 30px;
+    }
+  }
+  .todo-input {
+    display: none;
+    padding: 1rem 1.4rem;
+    border-bottom: 2px solid $gray-200;
+    background-color: $gary-242;
+    input {
+      @extend %input-theme;
+      width: 100%;
+      background-color: $gary-242;
+      font-size: 1.5rem;      
+    }
+  }
+  .todo-detail {
+    display: none;
+    padding: 1.4rem 3rem;
+    background-color: $gary-242;
+    .todo-detail-title {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+    .todo-detail-formident {
+      padding-left: 2rem;
+      input[type=date] {
+        @extend %input-theme;
+        width: 18rem;
+      }
+      button {
+        background: $primary;
+        height: 32px;
+        width: 32px;
+        line-height: 32px;
+        border-style: none;
+        text-align: center;
+        color: white;
+      }
+      textarea {
+        @extend %input-theme;   
+        resize: none;
+        width: 18rem;
+      }
+    }
+  }
+  .todo-buttons {
+    display: none;
+    button {
+      padding: 15px;
+      font-size: 1.5rem;
+      border: 0;
+      outline: 0;
+      cursor: pointer;
+      &:first-child {
+        background: white;
+        color: $text-danger;
+      }
+      &:last-child {
+        background: $primary;
+        color: white;
+      }
+    }
+  }
+}
+
+.todo-focus {
+  position: relative;
+  .todo-input-dummy {
+    display: none;
+  }
+  .todo-input, .todo-detail {
+    display: block;
+  }
+  .todo-buttons {
+    display: flex;
+  }
+}
+
+.todo-list {
+  margin-top: 1.5rem;
+  max-width: $main-layout-width;
+  .todo-item {
+    background: $gary-242;
+    padding: 1rem 1.4rem;
+  }
+  .todo-header {
+    display: flex;
+    line-height: 1.5rem;
+    span {
+      margin-left: 2rem;
+      font-size: 1.5rem;
+    }
+    i {
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+    }
+    .fa-star {
+      margin-left: auto;
+      font-size: 1.5rem;
+    }
+  }
+  .todo-footer {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    color: $gray-117;
+    > * {
+      margin-right: 1rem;
+    }
+  }
+}
 
 // // todo-item
 // .todo-item {
-//   display: flex;
-//   flex-direction: column;
-//   background-color: #F2F2F2;
-//   border-radius: 3px;
+
 //   position: relative;
 //   &.stared {
 //     background-color: $lighten-warning;
@@ -83,7 +195,7 @@ body {
 //     padding: 0 32px 24px 72px;
 //   }
 //   .todo-content {
-//     border-top: 2px solid $gray-500;
+//     border-top: 2px solid $gray-200;
 //     padding: 24px 72px 24px 72px;
 //   }
 

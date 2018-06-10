@@ -1,3 +1,51 @@
+@charset "UTF-8";
+.todo-form .todo-input input, .todo-form .todo-detail .todo-detail-formident input[type=date], .todo-form .todo-detail .todo-detail-formident textarea {
+  outline: 0;
+  border: none;
+  padding: 10px 20px; }
+
+.w-50 {
+  width: 50%; }
+
+.bg-primary {
+  background-color: #4A90E2; }
+
+/* Base for label styling */
+.todo-check {
+  /* checked mark aspect changes */ }
+  .todo-check input[type=checkbox]:not(:checked), .todo-check input[type=checkbox]:checked {
+    position: absolute;
+    left: -9999px; }
+  .todo-check input[type=checkbox]:not(:checked) + label, .todo-check input[type=checkbox]:checked + label {
+    position: relative;
+    cursor: pointer; }
+  .todo-check input[type=checkbox]:not(:checked) + label:before,
+  .todo-check input[type=checkbox]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white; }
+  .todo-check input[type=checkbox]:not(:checked) + label:after,
+  .todo-check input[type=checkbox]:checked + label:after {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background: #4A90E2;
+    color: white; }
+  .todo-check input[type=checkbox]:not(:checked) + label:after {
+    opacity: 0; }
+  .todo-check input[type=checkbox]:checked + label:after {
+    opacity: 1; }
+
 * {
   box-sizing: border-box; }
 
@@ -7,9 +55,6 @@ body {
 .container {
   width: 100%;
   margin: 0 auto; }
-
-.bg-primary {
-  background-color: #4A90E2; }
 
 .completed {
   text-decoration: line-through; }
@@ -29,3 +74,101 @@ body {
       box-shadow: 0 -5px #00408B inset; }
     .todo-nav .todo-nav-items span.active {
       color: white; }
+
+.todo-form {
+  margin: 20px auto 0;
+  box-shadow: 0px 4px 4px #C8C8C8;
+  max-width: 650px; }
+  .todo-form .todo-input-dummy {
+    position: relative;
+    padding: 15px 20px 15px 70px;
+    border: 2px solid #C8C8C8;
+    font-size: 1.5rem;
+    background-color: white;
+    color: #C8C8C8;
+    cursor: text; }
+    .todo-form .todo-input-dummy i {
+      position: absolute;
+      left: 30px; }
+  .todo-form .todo-input {
+    display: none;
+    padding: 1rem 1.4rem;
+    border-bottom: 2px solid #C8C8C8;
+    background-color: #F2F2F2; }
+    .todo-form .todo-input input {
+      width: 100%;
+      background-color: #F2F2F2;
+      font-size: 1.5rem; }
+  .todo-form .todo-detail {
+    display: none;
+    padding: 1.4rem 3rem;
+    background-color: #F2F2F2; }
+    .todo-form .todo-detail .todo-detail-title {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      font-size: 1.2rem;
+      font-weight: 700; }
+    .todo-form .todo-detail .todo-detail-formident {
+      padding-left: 2rem; }
+      .todo-form .todo-detail .todo-detail-formident input[type=date] {
+        width: 18rem; }
+      .todo-form .todo-detail .todo-detail-formident button {
+        background: #4A90E2;
+        height: 32px;
+        width: 32px;
+        line-height: 32px;
+        border-style: none;
+        text-align: center;
+        color: white; }
+      .todo-form .todo-detail .todo-detail-formident textarea {
+        resize: none;
+        width: 18rem; }
+  .todo-form .todo-buttons {
+    display: none; }
+    .todo-form .todo-buttons button {
+      padding: 15px;
+      font-size: 1.5rem;
+      border: 0;
+      outline: 0;
+      cursor: pointer; }
+      .todo-form .todo-buttons button:first-child {
+        background: white;
+        color: #D0021B; }
+      .todo-form .todo-buttons button:last-child {
+        background: #4A90E2;
+        color: white; }
+
+.todo-focus {
+  position: relative; }
+  .todo-focus .todo-input-dummy {
+    display: none; }
+  .todo-focus .todo-input, .todo-focus .todo-detail {
+    display: block; }
+  .todo-focus .todo-buttons {
+    display: flex; }
+
+.todo-list {
+  margin-top: 1.5rem;
+  max-width: 650px; }
+  .todo-list .todo-item {
+    background: #F2F2F2;
+    padding: 1rem 1.4rem; }
+  .todo-list .todo-header {
+    display: flex;
+    line-height: 1.5rem; }
+    .todo-list .todo-header span {
+      margin-left: 2rem;
+      font-size: 1.5rem; }
+    .todo-list .todo-header i {
+      font-size: 1.5rem;
+      margin-right: 1.5rem; }
+    .todo-list .todo-header .fa-star {
+      margin-left: auto;
+      font-size: 1.5rem; }
+  .todo-list .todo-footer {
+    margin-top: 1rem;
+    margin-left: 2rem;
+    color: #757575; }
+    .todo-list .todo-footer > * {
+      margin-right: 1rem; }

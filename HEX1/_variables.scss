@@ -1,0 +1,22 @@
+$primary: #4A90E2;
+$text-danger: #D0021B;
+$darken-primary: #00408B;
+$gray-117: #757575;
+$gary-242: #F2F2F2;
+$gray-200: #C8C8C8;
+
+$main-layout-width: 650px;
+
+%input-theme {
+  outline: 0;
+  border: none;
+  padding: 10px 20px;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.bg-primary {
+  background-color: $primary;
+}

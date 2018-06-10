@@ -1,0 +1,148 @@
+@import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
+:root {
+  height: 100%;
+}
+* {
+  /* outline: 1px solid crimson; */
+}
+h1 {
+  color:white;
+  text-align:center;
+  font-family: 'Press Start 2P', cursive;  
+}
+
+.successMsg {
+  color: #008000;
+}
+.errorMsg {
+  color: #800000;
+}
+
+.boy-centerbox {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.boy-form {
+  position: relative;
+  background: white;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 45px;
+  text-align: center;
+}
+.boy-form input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.boy-form button {
+  font-family: 'Press Start 2P', cursive;  
+  text-transform: uppercase;
+  outline: 0;
+  background: rgba(14,16,78,1);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.boy-form button:hover,.boy-form button:active,.boy-form button:focus {
+  color: rgba(106,246,251,1);
+}
+.boy-form .boy-counter {
+  margin: 15px 0 0;
+  color: rgba(14,16,78,1);
+  font-size: 12px;
+}
+.boy-form .boy-counter a {
+  font-family: 'Press Start 2P', cursive;  
+  color: rgba(106,246,251,1);
+  text-decoration: none;
+  background-color: rgba(14,16,78,1);
+}
+
+.boy-resultlist {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.boy-resultlist li {
+  display: flex;
+  justify-content: space-between;
+  margin:0 20%;
+  padding:20px;
+  border-bottom: 1px solid #D8D8D8;
+  background:white;
+  list-style: none;
+}
+
+.boy-resultlist li:nth-child(even) {
+  transform: perspective(100px) rotateX(3deg) translateY(2px) scale(1.001);
+  background: linear-gradient(to bottom,  #ffffff 0%,#EFEFEF 100%);
+}
+.boy-resultlist li:nth-child(odd) {
+  transform: perspective(100px) rotateX(-3deg) translateY(3px);
+  background: linear-gradient(to top,  #ffffff 0%,#EFEFEF 100%);
+}
+
+#boy-clock {
+  font-family: 'Press Start 2P', sans-serif;
+  position: fixed;
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 1em;
+  background: rgba(14,16,78,0.5);
+  color: rgba(106,246,251,1);
+}
+
+#boy-clock > span {
+	padding: 15px;
+	border-radius: 3px;
+	background: rgba(14,16,78,1);
+	display: inline-block;
+}
+
+.boy-loading {
+  border: 2px solid rgba(106,246,251,1);
+  display: inline-block;
+  opacity: 0;
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  animation: loading 1s ease-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+body {
+  background: rgba(106,246,251,1); /* fallback for old browsers */
+  background: linear-gradient(135deg, rgba(106,246,251,1) 0%, rgba(106,246,251,1) 50%,rgba(14,16,78,1) 51%,rgba(14,16,78,1) 100%);
+  background-repeat: no-repeat;
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}

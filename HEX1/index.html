@@ -18,73 +18,94 @@
   </nav>
 
   <div>
-    <div class="col-4">
-      <i class="fa fa-plus"></i>
-      <input type="text" placeholder="輸入待辦...">
-    </div>
-    <!-- 新增編輯窗 -->
-    <div class="col-4">
-      <div>
-        <input type="text" placeholder="綁定剛剛輸入的">
+    <div class="container todo-form">
+      <div class="todo-input-dummy">
+        <i class="fa fa-plus"></i>輸入待辦...
+      </div>
+      <!-- 新增編輯 -->
+      <div class="todo-input">
+        <input type="text" placeholder="輸入待辦...">
       </div>
 
-      <div>
+      <div class="todo-detail">
         <div>
-          <i class="fa fa-calendar-alt"></i> Deadline
-          <div>
-            <input type="date" name="" id="">
+          <label for="" class="todo-detail-title">
+            <i class="fa fa-calendar-alt"></i> Deadline
+          </label> 
+          <div class="todo-detail-formident">
+            <input type="date">
           </div>
         </div>
 
         <div>
-          <i class="fa fa-file"></i> File
-          <div>
+          <label for="" class="todo-detail-title">
+            <i class="fa fa-file"></i> File
+          </label> 
+          <div class="todo-detail-formident">
             <button>+</button>
           </div>
         </div>
 
         <div>
-          <i class="fa fa-commenting"></i>Comment
-          <div>
-            <textarea rows="5"></textarea>
+          <label for="" class="todo-detail-title">
+            <i class="far fa-comment-dots"></i> Comment
+          </label> 
+          <div class="todo-detail-formident">
+            <textarea rows="5" placeholder="備註..."></textarea>
           </div>
         </div>
       </div>
-
-      <div>
-        <button>
+      <!-- 新增按鈕區 -->
+      <div class="todo-buttons">
+        <button class="w-50">
           <i class="fa fa-times"></i> Cancel
         </button>
-        <button class="">
+        <button class="w-50">
           <i class="fa fa-plus"></i> Save
         </button>        
-      </div>
+      </div>  
+
     </div>
+
     <!-- todoitem list -->
-    <div class="col-4">
-      <div class="todo-header">
-        <div class="todo-check">
-          <input type="checkbox" id="123">
-          <label for="123"></label>
+    <div class="container todo-list">
+      <div class="todo-item">
+        <div class="todo-header">
+          <div class="todo-check">
+            <input type="checkbox" id="todo-checkbox">
+            <label for="todo-checkbox"></label>
+          </div>
+          <span>Type Something Here</span>
+          <i class="fa fa-star"></i>
+          <i class="fas fa-pencil-alt"></i>
         </div>
-        <title>Type Something Here</title>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-pencil"></i>
+    
+        <div class="todo-footer">
+          <i class="fa fa-calendar-alt"></i>
+          <span>2018-06-28</span>
+          <i class="fa fa-file"></i>
+          <i class="far fa-comment-dots"></i>
+        </div>
       </div>
-
-      <div class="todo-footer">
-
-        <i class="fa fa-calendar-alt"></i>
-        <span>2018-06-28</span>
-        <i class="fa fa-file"></i>
-        <i class="fa fa-commenting"></i>
-      </div>
-
-
     </div>
 
 
   </div>
-
+  <script>
+    (function () {
+      const todoForm = document.querySelector('.todo-form');
+      const todoButton = document.querySelector('.w-50');
+      function toggleForm () {
+        if (todoForm.classList.contains('todo-focus')) {
+          todoForm.classList.remove('todo-focus')
+        } else {
+          todoForm.classList.add('todo-focus')
+        }
+      }
+      todoForm.addEventListener('click', toggleForm)
+      todoButton.addEventListener('click', toggleForm)
+    })()
+  
+  </script>
 </body>
 </html>
