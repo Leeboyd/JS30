@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>時光屋 </title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+  crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="bg-primary todo-nav">
+    <div class="container todo-nav-items">
+      <span>My Task</span>
+      <span>In Progress</span>
+      <span>Completed</span>
+    </div>
+  </nav>
+
+  <div>
+    <div class="col-4">
+      <i class="fa fa-plus"></i>
+      <input type="text" placeholder="輸入待辦...">
+    </div>
+    <!-- 新增編輯窗 -->
+    <div class="col-4">
+      <div>
+        <input type="text" placeholder="綁定剛剛輸入的">
+      </div>
+
+      <div>
+        <div>
+          <i class="fa fa-calendar-alt"></i> Deadline
+          <div>
+            <input type="date" name="" id="">
+          </div>
+        </div>
+
+        <div>
+          <i class="fa fa-file"></i> File
+          <div>
+            <button>+</button>
+          </div>
+        </div>
+
+        <div>
+          <i class="fa fa-commenting"></i>Comment
+          <div>
+            <textarea rows="5"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button>
+          <i class="fa fa-times"></i> Cancel
+        </button>
+        <button class="">
+          <i class="fa fa-plus"></i> Save
+        </button>        
+      </div>
+    </div>
+    <!-- todoitem list -->
+    <div class="col-4">
+      <div class="todo-header">
+        <div class="todo-check">
+          <input type="checkbox" id="123">
+          <label for="123"></label>
+        </div>
+        <title>Type Something Here</title>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-pencil"></i>
+      </div>
+
+      <div class="todo-footer">
+
+        <i class="fa fa-calendar-alt"></i>
+        <span>2018-06-28</span>
+        <i class="fa fa-file"></i>
+        <i class="fa fa-commenting"></i>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+</body>
+</html>

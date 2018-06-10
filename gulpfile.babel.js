@@ -8,6 +8,9 @@ import source from 'vinyl-source-stream'
 import gutil from 'gulp-util'
 import rename from 'gulp-rename'
 import es from 'event-stream'
+import sass from 'gulp-sass'
+import browserSync from 'browser-sync'
+browserSync.create();
 // --------------------------------------
 // remember npm install babel-preset-es2015 --save
 // --------------------------------------
@@ -21,7 +24,7 @@ import es from 'event-stream'
 gulp.task('es6', () => {
   // define input files
   const files = [
-    './HEX0/hex01.js',
+    // './HEX0/hex01.js',
     // './20/20.js',
     // './19/19.js',
     // './06/06.js',
@@ -52,6 +55,29 @@ gulp.task('es6', () => {
   return es.merge.apply(null, tasks)
 })
 
-gulp.task('watch', () => {
-  gulp.watch(['./**/**.js'],['es6'])
+// gulp.task('js', () => {
+//   gulp.watch(['./**/**.js'],['es6'])
+// })
+
+gulp.task('scss', () => {
+  gulp.src('./**/style.scss')
+  .pipe(sass().on('error', sass.logError))
+  // .pipe(gulp.dest('./public/css'));
+  .pipe(
+    rename({
+      extname: '.css'
+    })
+  )
+  .pipe(gulp.dest('./'))
 })
+
+// Static Server + watching scss/html files
+gulp.task('serve', ['es6', 'scss'], () => {
+  browserSync.init({
+      server: "./"
+  });
+  gulp.watch(['./**/**.js'],['es6'])
+  gulp.watch('./**/style.scss', ['scss']).on('change', browserSync.reload);
+  gulp.watch("./**/index.html").on('change', browserSync.reload);
+  gulp.watch("./**/style.css").on('change', browserSync.reload);
+});

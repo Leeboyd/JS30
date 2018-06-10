@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  background-color: #E1E1E1; }
+
+.container {
+  width: 100%;
+  margin: 0 auto; }
+
+.bg-primary {
+  background-color: #4A90E2; }
+
+.completed {
+  text-decoration: line-through; }
+
+.todo-nav .todo-nav-items {
+  display: flex;
+  justify-content: space-between;
+  max-width: 650px; }
+  .todo-nav .todo-nav-items span {
+    flex: 1;
+    padding: 25px 0;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    color: #00408B; }
+    .todo-nav .todo-nav-items span:active, .todo-nav .todo-nav-items span:hover, .todo-nav .todo-nav-items span.active {
+      box-shadow: 0 -5px #00408B inset; }
+    .todo-nav .todo-nav-items span.active {
+      color: white; }
