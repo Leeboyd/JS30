@@ -1,0 +1,139 @@
+@import './_variables.scss';
+@import './_mixin.scss';
+
+* {
+  box-sizing: border-box;
+  // outline:    solid 0.25rem rgba(236, 52, 52, 0.5) !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+body {
+  background: $gray-242;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto; 
+}
+
+//
+nav {
+  height: 92px;
+  .nav-logo {
+    padding-left: 40px;
+  }
+  .nav-search {
+    width: 388px;
+    margin-left: 40px;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid white;
+    align-items: baseline;
+    color: white;
+    i {
+      margin-right: 1rem;
+    }
+    input[type=search] {
+      flex: 1;
+      outline: none;
+      border: none;
+      background: inherit;
+      color: white;
+      &::placeholder {
+        font-style: italic;
+        color: darken(white, 10%);
+      }
+    }
+  }
+  
+  // .logo {
+  //   display: inline-block;
+  //   width: 152px;
+  //   height: 26px;
+  //   background: url('./img/logo.png') no-repeat;
+  // }
+}
+nav.flexbox-container {
+  align-items: center;
+}
+
+//
+
+.filter-item {
+  padding: 1.5rem 40px;
+  background: $gray-235;
+}
+
+// 
+
+.result-container {
+  flex: 1;
+  padding: 24px 40px;
+
+  .result-heading {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    mark {
+      background: inherit;
+      font-weight: 900;
+      color: $primary;
+    }
+  }
+
+  .result-tagList {
+    margin-bottom: 1rem;
+    .result-tag {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      margin: 0.5rem 0.5rem 0.5rem 0;
+      border: 1px solid $primary;
+      border-radius: 100px;
+      color: $primary;
+      font-style: italic;
+      i {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  .result-item {
+    margin-bottom: 1.5rem;
+    article {
+      padding: 1.5rem 1.25rem;
+    }
+    h6 {
+      line-height: 2.25rem;
+      color: $primary;
+      font-size: 1.5rem;
+    }
+    p {
+      @include multiLineEllipsis($lineHeight: 1.5rem, $displayLine: 3, $bgColor: white); 
+    }
+    p + span {
+      font-weight: 900;
+    }
+    span.category-tag {
+      margin-left: 1.25rem; 
+      padding: 2px 1rem;
+      border-radius: 100px;
+      background: $gray-215;
+      font-style: italic;
+      color: white;     
+    }
+    footer {
+      margin-top: 1rem;
+      i {
+        margin-right: 0.5rem;
+      }
+      span {
+        margin-right: 1.25rem;
+        color: $gray-155;
+      }
+    }
+  }
+}
+
+

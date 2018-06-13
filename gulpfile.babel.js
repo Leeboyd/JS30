@@ -74,7 +74,7 @@ gulp.task('scss', () => {
 // Static Server + watching scss/html files
 gulp.task('serve', ['es6', 'scss'], () => {
   browserSync.init({
-      server: "./"
+    server: './'
   });
   gulp.watch(['./**/**.js'],['es6'])
   gulp.watch('./**/style.scss', ['scss']).on('change', browserSync.reload);

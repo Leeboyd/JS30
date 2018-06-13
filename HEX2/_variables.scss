@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+$primary: #9013FE;
+$text-danger: #D0021B;
+$darken-primary: #7828B4;
+$gray-155: #9B9B9B;
+$gray-242: #F2F2F2;
+// $gray-200: #C8C8C8;
+$gray-215: #D7D7D7;
+$gray-235: #EBEBEB;
+
+$side_margin-width: 38px;
+
+.w-50 {
+  width: 50%;
+}
+
+.bg-primary {
+  background-color: $darken-primary;
+}
+
+.flexbox-container {
+  display: flex;
+}
+
+.aside-indent {
+  margin-left: $side_margin-width;
+  width: 300px;
+}
+
