@@ -1,5 +1,6 @@
 @import './_variables.scss';
 @import './_mixin.scss';
+@import './_checkbox.scss';
 
 * {
   box-sizing: border-box;
@@ -48,13 +49,6 @@ nav {
       }
     }
   }
-  
-  // .logo {
-  //   display: inline-block;
-  //   width: 152px;
-  //   height: 26px;
-  //   background: url('./img/logo.png') no-repeat;
-  // }
 }
 nav.flexbox-container {
   align-items: center;
@@ -65,10 +59,50 @@ nav.flexbox-container {
 .filter-item {
   padding: 1.5rem 40px;
   background: $gray-235;
+  &:not(:first-child):not(:last-child) {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: $gray-215;
+  }
+  .filter-item-title {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    font-weight: 900;
+  }
+  .filter-select {
+    position: relative;
+    select {
+      @include appearance($arg: none);
+      height: 40px;
+      width: 100%;
+      padding: 7px 10px;
+      border-radius: 3px;
+      outline: 0;
+    }
+    i {
+      position: absolute;
+      right: 15px;
+      top: 12px;
+      color: $gray-215;
+    }
+  }
+  .filter-date {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: baseline;
+    justify-content: space-between;
+    input {
+      outline: none;
+      border: none;
+      padding: 5px;
+    }
+  }
+  .filter-check {
+    margin: 1rem 0;
+  }
 }
 
 // 
-
 .result-container {
   flex: 1;
   padding: 24px 40px;
@@ -103,6 +137,7 @@ nav.flexbox-container {
     margin-bottom: 1.5rem;
     article {
       padding: 1.5rem 1.25rem;
+      background: white;
     }
     h6 {
       line-height: 2.25rem;

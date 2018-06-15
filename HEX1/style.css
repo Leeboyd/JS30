@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .todo-form .todo-input input, .todo-form .todo-detail .todo-detail-formident input[type=date], .todo-form .todo-detail .todo-detail-formident textarea {
-  outline: 0;
+  outline: none;
   border: none;
   padding: 10px 20px; }
 

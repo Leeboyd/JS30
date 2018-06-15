@@ -23,3 +23,9 @@
     background: $bgColor;
   }
 }
+
+@mixin appearance ($arg: none) {
+  appearance: $arg;
+  -moz-appearance: $arg;
+  -webkit-appearance: $arg;
+}

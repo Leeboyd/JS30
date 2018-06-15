@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 .w-50 {
   width: 50%; }
@@ -13,6 +14,43 @@
   width: 300px; }
 
 /* mixin for multiline */
+/* Base for label styling */
+.filter-check {
+  /* checked mark aspect changes */ }
+  .filter-check input[type=checkbox]:not(:checked), .filter-check input[type=checkbox]:checked {
+    position: absolute;
+    left: -9999px; }
+  .filter-check input[type=checkbox]:not(:checked) + label, .filter-check input[type=checkbox]:checked + label {
+    position: relative;
+    padding-left: 1.95em;
+    cursor: pointer; }
+  .filter-check input[type=checkbox]:not(:checked) + label:before,
+  .filter-check input[type=checkbox]:checked + label:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: white; }
+  .filter-check input[type=checkbox]:not(:checked) + label:after,
+  .filter-check input[type=checkbox]:checked + label:after {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    background: #9013FE;
+    color: white; }
+  .filter-check input[type=checkbox]:not(:checked) + label:after {
+    opacity: 0; }
+  .filter-check input[type=checkbox]:checked + label:after {
+    opacity: 1; }
+
 * {
   box-sizing: border-box; }
 
@@ -56,6 +94,41 @@ nav.flexbox-container {
 .filter-item {
   padding: 1.5rem 40px;
   background: #EBEBEB; }
+  .filter-item:not(:first-child):not(:last-child) {
+    border-width: 1px 0;
+    border-style: solid;
+    border-color: #D7D7D7; }
+  .filter-item .filter-item-title {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+    font-weight: 900; }
+  .filter-item .filter-select {
+    position: relative; }
+    .filter-item .filter-select select {
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      height: 40px;
+      width: 100%;
+      padding: 7px 10px;
+      border-radius: 3px;
+      outline: 0; }
+    .filter-item .filter-select i {
+      position: absolute;
+      right: 15px;
+      top: 12px;
+      color: #D7D7D7; }
+  .filter-item .filter-date {
+    display: flex;
+    margin-bottom: 1rem;
+    align-items: baseline;
+    justify-content: space-between; }
+    .filter-item .filter-date input {
+      outline: none;
+      border: none;
+      padding: 5px; }
+  .filter-item .filter-check {
+    margin: 1rem 0; }
 
 .result-container {
   flex: 1;
@@ -82,7 +155,8 @@ nav.flexbox-container {
   .result-container .result-item {
     margin-bottom: 1.5rem; }
     .result-container .result-item article {
-      padding: 1.5rem 1.25rem; }
+      padding: 1.5rem 1.25rem;
+      background: white; }
     .result-container .result-item h6 {
       line-height: 2.25rem;
       color: #9013FE;

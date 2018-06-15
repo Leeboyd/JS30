@@ -23,36 +23,46 @@
     <div class="aside-indent">
 
       <div class="filter-item">
-        <div>Location</div>
-        <select>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="mercedes">Mercedes</option>
-          <option value="audi">Audi</option>
-        </select>
+        <div class="filter-item-title">Location</div>
+        <div class="filter-select">
+          <select>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+          </select>
+          <i class="fas fa-sort sort"></i>
+        </div>
       </div>
 
       <div class="filter-item">
-        <div>Date</div>
-        <label for="from">from</label>
-        <input type="date" name="" id="from">
-        <label for="to">to</label>
-        <input type="date" name="" id="to">
+        <div class="filter-item-title">Date</div>
+        
+        <div class="filter-date">
+          <label for="from">from</label>
+          <input type="date" name="" id="from">
+        </div>
+
+        <div class="filter-date">
+          <label for="to">to</label>
+          <input type="date" name="" id="to">
+        </div>
+
       </div>
 
       <div class="filter-item">
-        <div>Categories</div>
-        <div>
+        <div class="filter-item-title">Categories</div>
+        <div class="filter-check">
           <input type="checkbox" name="" id="bar1">
           <label for="bar1">Bar1</label>
         </div>
 
-        <div>
+        <div class="filter-check">
           <input type="checkbox" name="" id="bar2">
           <label for="bar2">Bar2</label>
         </div>
 
-        <div>
+        <div class="filter-check">
           <input type="checkbox" name="" id="bar3">
           <label for="bar3">Bar3</label>
         </div>
